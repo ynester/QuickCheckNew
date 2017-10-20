@@ -9,6 +9,7 @@ public class QuickTest {
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.google.com/");
         System.out.println("Test completed");
+        System.out.println("One more change");
         driver.quit();
     }
 }
