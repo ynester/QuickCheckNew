@@ -10,6 +10,7 @@ public class QuickTest {
         driver.get("https://www.google.com/");
         System.out.println("Test completed");
         System.out.println("One more change");
+        System.out.println("One more change + one more");
         driver.quit();
     }
 }
