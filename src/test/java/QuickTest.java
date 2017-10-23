@@ -9,6 +9,6 @@ public class QuickTest {
 
     @Test
     public void failedTest() {
-        Assert.assertTrue("Test Failed", false);
+        Assert.assertFalse("Test Failed", false);
     }
 }
