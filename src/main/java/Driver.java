@@ -15,7 +15,11 @@ public class Driver {
 
         if (webDriver == null) {
             Capabilities chromeCapabilities = DesiredCapabilities.chrome();
-            webDriver = new RemoteWebDriver(new URL("http://localhost:32769/wd/hub"), chromeCapabilities);
+            try {
+                webDriver = new RemoteWebDriver(new URL("http://localhost:32769/wd/hub"), chromeCapabilities);
+            }catch (MalformedURLException ex){
+                ex.printStackTrace();
+            }
 
 //            ChromeDriverManager.getInstance().setup();
 //            webDriver = new ChromeDriver();
