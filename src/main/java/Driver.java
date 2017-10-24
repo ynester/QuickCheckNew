@@ -10,6 +10,7 @@ public class Driver {
     public static WebDriver getWebDriver() {
 
         if (webDriver == null) {
+            System.setProperty("webdriver.chrome.driver","C:\\Users\\ynester\\Documents\\AutomationWeb\\Driver\\chromedriver.exe");
                 ChromeDriverManager.getInstance().setup();
                 webDriver = new ChromeDriver();
         }
