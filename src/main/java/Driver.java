@@ -16,7 +16,7 @@ public class Driver {
         if (webDriver == null) {
             Capabilities chromeCapabilities = DesiredCapabilities.chrome();
 
-                webDriver = new RemoteWebDriver(new URL("http://localhost:32769"), chromeCapabilities);
+                webDriver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeCapabilities);
 
 //
 //            ChromeDriverManager.getInstance().setup();
