@@ -11,17 +11,19 @@ public class Driver {
     public static WebDriver webDriver;
 
     public static WebDriver getWebDriver() throws MalformedURLException {
+        try {
 
         if (webDriver == null) {
             Capabilities chromeCapabilities = DesiredCapabilities.chrome();
-            try {
+
                 webDriver = new RemoteWebDriver(new URL("http://localhost:32769/wd/hub"), chromeCapabilities);
-            }catch (MalformedURLException ex){
-                ex.printStackTrace();
-            }
+
 //
 //            ChromeDriverManager.getInstance().setup();
 //            webDriver = new ChromeDriver();
+        }
+        }catch (MalformedURLException ex){
+            ex.printStackTrace();
         }
         return webDriver;
     }
