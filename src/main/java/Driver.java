@@ -1,18 +1,24 @@
 import io.github.bonigarcia.wdm.ChromeDriverManager;
-import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class Driver {
     public static WebDriver webDriver;
 
-    public static WebDriver getWebDriver() {
+    public static WebDriver getWebDriver() throws MalformedURLException {
 
         if (webDriver == null) {
-            System.setProperty("webdriver.chrome.driver","C:\\Users\\ynester\\Documents\\AutomationWeb\\Driver\\chromedriver.exe");
-                ChromeDriverManager.getInstance().setup();
-                webDriver = new ChromeDriver();
+            Capabilities chromeCapabilities = DesiredCapabilities.chrome();
+            webDriver = new RemoteWebDriver(new URL("http://localhost:32769/wd/hub"), chromeCapabilities);
+
+//            ChromeDriverManager.getInstance().setup();
+//            webDriver = new ChromeDriver();
         }
         return webDriver;
     }
