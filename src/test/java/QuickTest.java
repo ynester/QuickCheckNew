@@ -12,10 +12,10 @@ public class QuickTest {
 //        Assert.assertTrue("Test", true);
 //    }
 //
-//    @Test
-//    public void failedTest() {
-//        Assert.assertFalse("Test Failed", true);
-//    }
+    @Test
+    public void failedTest() {
+        Assert.assertFalse("Test Failed", true);
+    }
     @Test
     public void test() throws InterruptedException, MalformedURLException {
         WebDriver driver = Driver.getWebDriver();
