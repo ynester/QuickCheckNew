@@ -14,7 +14,7 @@ public class QuickTest {
 //
     @Test
     public void failedTest() {
-        Assert.assertFalse("Test Failed", true);
+        Assert.assertFalse("Test Failed", false);
     }
     @Test
     public void test() throws InterruptedException, MalformedURLException {
